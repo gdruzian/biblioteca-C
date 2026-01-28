@@ -1,108 +1,78 @@
-<h1 align="center">
-  📚 Sistema de Gerenciamento de Biblioteca
-</h1>
+# 📚 Sistema de Gerenciamento de Biblioteca em C
 
-<p align="center">
-  <img alt="Linguagem C" src="https://img.shields.io/badge/Linguagem-C-00599C?style=for-the-badge&logo=c&logoColor=white">
-  <img alt="Status" src="https://img.shields.io/badge/Status-Finalizado-green?style=for-the-badge">
-</p>
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
 
-<p align="center">
-  Um sistema robusto via console para automação de bibliotecas escolares, substituindo o papel por persistência de dados em arquivos.
-</p>
+Este é um projeto desenvolvido em **Linguagem C** focado na gestão automatizada de uma biblioteca. O objetivo principal foi aplicar conceitos fundamentais de lógica de programação, manipulação de arquivos e estruturação de dados.
+
+O sistema permite o controle completo do acervo, usuários e fluxo de empréstimos, substituindo processos manuais por persistência de dados em arquivos de texto.
 
 ---
 
-## 📖 Sobre o Projeto
+## 🚀 Funcionalidades
 
-Este projeto foi desenvolvido para aplicar conceitos fundamentais da ciência da computação utilizando a linguagem **C**. O objetivo foi criar uma solução leve e eficiente para gerenciar o acervo, usuários e o fluxo de empréstimos de uma biblioteca pequena, garantindo que os dados sejam salvos e recuperados automaticamente.
+O sistema gerencia o ciclo de vida completo de uma biblioteca:
 
-## ✨ Funcionalidades
-
-### 📕 Gestão de Acervo
-- [x] Cadastro de livros (Código, Título, Autor, Estoque).
-- [x] Listagem completa do acervo.
-- [x] Controle de quantidade disponível.
-
-### 👥 Gestão de Usuários
-- [x] Cadastro de leitores (Código, Nome, Idade).
-- [x] Listagem de usuários registrados.
-
-### 🔄 Fluxo de Empréstimos
-- [x] **Validação Inteligente:** Só permite empréstimo se o livro tiver estoque e o usuário existir.
-- [x] Registro de saída de livros.
-- [x] Registro de devolução (atualizando o estoque automaticamente).
-
-### 💾 Persistência de Dados
-- **Salvamento Automático:** Dados exportados para `.txt` ao encerrar.
-- **Carregamento Automático:** Restauração do estado do sistema ao iniciar.
+* **Cadastro de Livros:** Registro detalhado com Título, Autor, Código e Quantidade Disponível.
+* **Gestão de Usuários:** Cadastro de leitores com ID único.
+* **Controle de Empréstimos:** Vincula um livro a um usuário, decrementando o estoque automaticamente.
+* **Sistema de Devolução:** Restaura o estoque e atualiza o status do empréstimo.
+* **Persistência de Dados:** Todos os registros são salvos automaticamente em arquivos `.txt` ou binários, garantindo que nada se perca ao fechar o programa.
+* **Busca e Listagem:** Relatórios rápidos de livros disponíveis e usuários cadastrados.
 
 ---
 
-## 🛠️ Tecnologias e Conceitos
+## 🛠️ Tecnologias e Conceitos Aplicados
 
-Este projeto explora o "coração" da programação:
+Este projeto serviu para consolidar conhecimentos técnicos essenciais:
 
-* **Linguagem C:** Foco em performance e controle de memória.
-* **Structs:** Modelagem de dados complexos (Livros, Usuários).
-* **File I/O (`stdio.h`):** Leitura e escrita em arquivos de texto para banco de dados simples.
-* **Alocação de Memória:** Manipulação eficiente de vetores e ponteiros.
+- **Structs:** Para modelagem de entidades complexas (Livro, Usuário, Empréstimo).
+- **Manipulação de Arquivos (FILE*):** Leitura e escrita de dados para persistência.
+- **Alocação de Memória:** Gestão eficiente de recursos.
+- **Ponteiros:** Manipulação direta de endereços de memória para otimização.
 
 ---
 
-## 🚀 Como Compilar e Executar
+## 💻 Como Compilar e Executar
 
 Para rodar este projeto, você precisará de um compilador C (como o `GCC`).
 
-### Pré-requisitos
-* GCC instalado (MinGW no Windows ou nativo no Linux/Mac).
+### 1. Clone o repositório
+Abra o terminal e digite:
+```bash
+git clone [https://github.com/gdruzian/biblioteca-C.git](https://github.com/gdruzian/biblioteca-C.git)
+2. Entre na pasta do projeto
+Bash
+cd Biblioteca-C
+3. Compile o código
+Este comando gera o executável do sistema:
 
-### Passo a passo
+Bash
+gcc main.c -o biblioteca
+4. Execute o programa
+No Windows:
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/gdruzian/biblioteca-C.git
-    ```
+Bash
+./biblioteca.exe
+No Linux/Mac:
 
-2.  **Acesse a pasta:**
-    ```bash
-    cd biblioteca-C
-    ```
+Bash
+./biblioteca
 
-3.  **Compile o código:**
-    ```bash
-    gcc main.c -o biblioteca
-    ```
+📂 Estrutura dos Arquivos
+A organização do projeto segue a seguinte lógica:
 
-4.  **Execute:**
-    * **Windows:**
-        ```bash
-        .\biblioteca.exe
-        ```
-    * **Linux/Mac:**
-        ```bash
-        ./biblioteca
-        ```
+main.c: Código fonte principal com a lógica do sistema e menus.
 
----
+biblioteca.h: (Opcional) Cabeçalhos e definições de structs.
 
-## 📂 Estrutura dos Arquivos
+livros.txt: Banco de dados dos livros (gerado automaticamente).
 
-* `main.c`: Código fonte principal com a lógica do sistema.
-* `livros.txt`: Banco de dados dos livros (gerado automaticamente).
-* `usuarios.txt`: Banco de dados dos usuários (gerado automaticamente).
-* `emprestimos.txt`: Histórico de transações (gerado automaticamente).
+usuarios.txt: Banco de dados dos usuários.
 
----
+emprestimos.txt: Histórico de movimentações.
 
-## 👨‍💻 Autor
+👨‍💻 Autor
+Gustavo Druzian
 
-<img style="border-radius: 50%;" src="https://github.com/gdruzian.png" width="100px;" alt=""/>
-<br />
-
-**Gustavo Druzian**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gdruzian)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gdruzian)
-
----
+Estudante de Engenharia de Software focado em desenvolvimento Backend C#/.NET e Segurança da Informação.
