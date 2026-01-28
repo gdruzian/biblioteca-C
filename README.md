@@ -40,7 +40,7 @@ Para rodar este projeto, você precisará de um compilador C (como o `GCC`).
 ### 1. Clone o repositório
 Abra o terminal e digite:
 ```bash
-git clone [https://github.com/gdruzian/biblioteca-C.git](https://github.com/gdruzian/biblioteca-C.git)
+git clone https://github.com/gdruzian/biblioteca-C.git
 2. Entre na pasta do projeto
 Bash
 cd Biblioteca-C
