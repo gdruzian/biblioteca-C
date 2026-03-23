@@ -8,7 +8,7 @@ struct Livro {
 	char autor[100];
 	int total;
 	int disponivel;
-};
+  };
 
 struct Usuario {
 	int codigo;
@@ -116,8 +116,8 @@ void listar_emprestimos() {
 	
 	for(int i = 0; i < totemprestimos; i++) {
 		printf("--- Exibindo emprestimo %d ---\n", i);
-		printf("Usuario (C骴igo): %d\n", prateleira_emprestimo[i].codigo_usuario);
-		printf("Livro (C骴igo): %d\n", prateleira_emprestimo[i].codigo_livro);
+		printf("Usuario (C贸digo): %d\n", prateleira_emprestimo[i].codigo_usuario);
+		printf("Livro (C贸digo): %d\n", prateleira_emprestimo[i].codigo_livro);
 		printf("---------------------------\n");
 	}
 }
@@ -126,9 +126,9 @@ void emprestimo_livro() {
 	int codUsuario, codLivro;
 
 	printf("\n--- Realizar Emprestimo ---\n");
-	printf("Digite o c骴igo do Usuario: ");
+	printf("Digite o c贸digo do Usuario: ");
 	scanf("%d", &codUsuario);
-	printf("Digite o c骴igo do Livro: ");
+	printf("Digite o c贸digo do Livro: ");
 	scanf("%d", &codLivro);
 	
 	int indice_livro = -1;
@@ -141,7 +141,7 @@ void emprestimo_livro() {
 	}
 	
 	if (indice_livro == -1) {
-		printf("Erro: Livro com c骴igo %d n鉶 encontrado.\n", codLivro);
+		printf("Erro: Livro com c贸digo %d n茫o encontrado.\n", codLivro);
 		return;
 	}
 	
@@ -154,7 +154,7 @@ void emprestimo_livro() {
 			totemprestimos++;
 			printf("Emprestimo do livro '%s' para o usuario %d realizado com sucesso!\n", prateleira[indice_livro].titulo, codUsuario);
 		} else {
-			printf("Erro: Livro '%s' indispon韛el no momento (sem c髉ias).\n", prateleira[indice_livro].titulo);
+			printf("Erro: Livro '%s' indispon铆vel no momento (sem c贸pias).\n", prateleira[indice_livro].titulo);
 		}
 	}
 }
@@ -169,7 +169,7 @@ void cadastrarlivro() {
 	
 	printf("\n---Cadastro de Novo Livro (Gaveta %d) ---\n", prox_gavetalivre);
 	
-	printf("Digite o c骴igo: ");
+	printf("Digite o c贸digo: ");
 	scanf("%d", &prateleira[prox_gavetalivre].codigo);
 	
 	getchar();
@@ -202,7 +202,7 @@ void cadastrarusuario() {
 	
 	printf("\n---Cadastro de Novo Usuario ---\n");
 	
-	printf("Digite o c骴igo: ");
+	printf("Digite o c贸digo: ");
 	scanf("%d", &prateleira_usuarios[prox_gavetalivre].codigo);
 	
 	getchar();
@@ -249,7 +249,7 @@ void exibir_tdsusuarios() {
 	for(int i = 0; i < totusuarios; i++) {
 		printf("--- Exibindo Usuario %d ---\n", i);
 		printf("Nome: %s\n", prateleira_usuarios[i].nome);
-		printf("C骴igo: %d\n", prateleira_usuarios[i].codigo);
+		printf("C贸digo: %d\n", prateleira_usuarios[i].codigo);
 		printf("Idade: %d\n", prateleira_usuarios[i].idade);
 		printf("---------------------------\n");
 	}
@@ -272,7 +272,7 @@ int main() {
 		printf("6. Listar Emprestimos\n");
 		printf("0. Sair do programa\n");
 		printf("============================================\n");
-		printf("Escolha sua op玢o: ");
+		printf("Escolha sua op莽茫o: ");
 		scanf("%d", &opcao);
 	
 		switch (opcao) {
@@ -301,7 +301,7 @@ int main() {
 				printf("Encerrando o programa!\n");
 				break;
 			default:
-				printf("Op玢o inv醠ida! Tente novamente.\n");
+				printf("Op莽茫o inv谩lida! Tente novamente.\n");
 				break;
 			}
 		}while (opcao != 0);
